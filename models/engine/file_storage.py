@@ -2,7 +2,6 @@
 """ The FileStorage class to serialize instances to a JSON. """
 
 
-import os
 import json
 from models.base_model import BaseModel
 
@@ -50,7 +49,7 @@ class FileStorage:
                 data = json.load(file)
                 for key, value in data.items():
                     obj_class, obj_id = key.split(".")
-                    cls = BaseMode if obj_class == "BaseModel" else None
+                    cls = BaseModel if obj_class == "BaseModel" else None
                     if cls:
                         obj = cls(**value)
                         FileStorage.__objects[key] = obj

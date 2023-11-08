@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Testing the function of FileStorage regarding save and reload objects. """
+""" This is the filestorage test file """
 
 import unittest
 import os
@@ -8,15 +8,15 @@ from models.base_model import BaseModel
 
 
 class TestFileStorage(unittest.TestCase):
-    """ To test the functionality of the FileStorage """
+    """ Test file storage """
 
     def setUp(self):
-        """ Create a new object and setup """
+        """ Set up for testfile storage """
         self.storage = storage
         self.storage.reload()
 
     def tearDown(self):
-        """ Teardown a new object """
+        """ Tear down for test file storage """
         if os.path.exists("file.json"):
             os.remove("file.json")
 
