@@ -34,6 +34,7 @@ class BaseModel:
     def save(self):
         """ Update the updated_at attribute with the current datetime """
         self.updated_at = datetime.now()
+        models.storage.save()
 
     def to_dict(self):
         """ Convert the BaseModel instance to a dict for serilization. """
