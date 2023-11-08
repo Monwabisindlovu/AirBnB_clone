@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ BaseModel module this module defines the BaseModel class """
 
+import models
 import uuid
 from datetime import datetime
 
@@ -15,9 +16,12 @@ class BaseModel:
         if kwargs:
             for key, value in kwargs.items():
                 if key != "__class__":
-                    if key in ["created_at", "updated_at"]
-                    setattr(self, key,
-                            datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f"))
+                    if key in ["created_at", "updated_at"]:
+                        setattr(self, key,
+                                datetime.strptime(value,
+                                                  "%Y-%m-%dT%H:%M:%S.%f"))
+                    else:
+                        setattr(self, key, value)
                 else:
                     setattr(self, key, value)
         else:

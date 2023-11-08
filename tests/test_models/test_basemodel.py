@@ -33,14 +33,14 @@ class TestBaseModel(unittest.TestCase):
         my_new_model = BaseModel(**my_model_json)
 
         self.assertEqual(my_model.id, my_new_model.id)
-        self.assertEqual(my_model.created_at, my_new_model.updated_at)
+        self.assertEqual(my_model.created_at, my_new_model.created_at)
         self.assertEqual(my_model.updated_at, my_new_model.updated_at)
         self.assertEqual(my_model.name, my_new_model.name)
         self.assertEqual(my_model.my_number, my_new_model.my_number)
         self.assertEqual(
-                my_model.__class__.__name__,
-                my_new_model.__class__.__name()
-        )
+                         my_model.__class__.__name__,
+                         my_new_model.__class__.__name()
+                     )
 
 
 if __name__ == '__main__':
