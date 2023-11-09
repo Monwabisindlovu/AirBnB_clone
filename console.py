@@ -45,10 +45,10 @@ class HBNBCommand(cmd.Cmd):
         """"Create a new instance of BaseModel, save it, and print the id"""
         if not arg:
             print("** class name missing **")
-        elif arg not in models.storage.classes:
+        elif arg not in models.storage._FileStorage__objects:
             print("** class doesn't exist **")
         else:
-            new_instance = models.storage.classes[arg[0]]()
+            new_instance = models.storage._FileStorage__objects[arg]()
             new_instance.save()
             print(new_instance.id)
 
