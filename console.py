@@ -25,7 +25,7 @@ class HBNBCommand(cmd.Cmd):
     """
 
     prompt = "(hbnb)"
-    valid_classes = ["BaseModel"]
+    valid_classes = ["BaseModel", "User"]
 
     def do_quit(self, arg):
         """ Quit command to exit the program """
@@ -130,18 +130,19 @@ class HBNBCommand(cmd.Cmd):
             print("** instance id missing **")
             return
         model, id = args[:2]
-        instance = models.storage.all()[f"{models}.{id}"]
+        print(models.storage.all().keys())
+        instance = models.storage.all().get(f"{model}_{id}")
         if not instance:
             print("** no instance found **")
             return
         if len(args) < 3:
             print("** attribute name missing **")
-            return
+            returni
         if len(args) < 4:
             print("** value missing **")
             return
         attr, value = args[2:4]
-        instance.__dict__[eval(attr)] = eval(value)
+        setattr(instance, attr, eval(value))
         instance.save()
 
 
