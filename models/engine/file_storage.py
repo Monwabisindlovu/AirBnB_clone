@@ -49,7 +49,14 @@ class FileStorage:
                 data = json.load(file)
                 for key, value in data.items():
                     obj_class, obj_id = key.split(".")
-                    cls = BaseModel if obj_class == "BaseModel" else None
+                    if obj_class == "BaseModel":
+                        cls = BaseModel
+                    elif obj_class == "User":
+                        from models.user import User
+                        cls = User
+                    else:
+                        cls = None
+
                     if cls:
                         obj = cls(**value)
                         FileStorage.__objects[key] = obj
