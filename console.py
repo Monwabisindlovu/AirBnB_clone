@@ -25,6 +25,7 @@ class HBNBCommand(cmd.Cmd):
     """
 
     prompt = "(hbnb)"
+    valid_classes = ["BaseModel"]
 
     def do_quit(self, arg):
         """ Quit command to exit the program """
@@ -106,14 +107,15 @@ class HBNBCommand(cmd.Cmd):
         objects_list = []
         if not arg:
             for object in all_objects.values():
-                objects_list.append(str(obj))
+                objects_list.append(str(object))
         else:
             if args[0] not in HBNBCommand.valid_classes:
                 print("** class doesn't exist **")
                 return
             for key, object in all_objects.items():
                 if key.split('.')[0] == args[0]:
-                    objects_list.append(str(obj))
+                    objects_list.append(str(object))
+        print(objects_list)
 
     def do_update(self, arg):
         """Updates an instance based on the class name and id"""
