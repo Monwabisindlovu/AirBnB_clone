@@ -33,17 +33,17 @@ class FileStorage:
 
     def new(self, obj):
         """ Add a new instanc to the __objects dictionary. """
-        key = "{}.{}".format(obj.__class__.__name__, obj.id)
-        FileStorage.__objects[key] = obj
+        key = "{}.{}".format(object.__class__.__name__, object.id)
+        FileStorage.__objects[key] = object
 
     def save(self):
         """ Serialize __objects to the JSON file. """
-        serialized_objs = {}
-        for key, obj in FileStorage.__objects.items():
-            serialized_objs[key] = obj.to_dict()
+        serialized_objects = {}
+        for key, object in FileStorage.__objects.items():
+            serialized_objects[key] = object.to_dict()
 
         with open(FileStorage.__file_path, 'w', encoding='utf-8') as file:
-            json.dump(serialized_objs, file)
+            json.dump(serialized_objects, file)
 
     def reload(self):
         """
@@ -54,12 +54,14 @@ class FileStorage:
             with open(FileStorage.__file_path, 'r', encoding='utf-8') as file:
                 data = json.load(file)
                 for key, value in data.items():
-                    class_name, obj_id = key.split(".")
+                    class_name, object_id = key.split(".")
                     cls = None
 
                     if class_name == "BaseModel":
                         cls = BaseModel
-                    elif cass_name == "State":
+                    elif class_name == "User":
+                        cls = User
+                    elif class_name == "State":
                         cls = State
                     elif class_name == "City":
                         cls = City
@@ -71,7 +73,7 @@ class FileStorage:
                         cls = Review
 
                     if cls:
-                        obj = cls(**value)
-                        FileStorage.__objects[key] = obj
+                        object = cls(**value)
+                        FileStorage.__objects[key] = object
         except FileNotFoundError:
             pass
