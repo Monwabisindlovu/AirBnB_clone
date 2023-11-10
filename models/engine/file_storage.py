@@ -4,6 +4,12 @@
 
 import json
 from models.base_model import BaseModel
+from models.user import User
+from models.state import State
+from models.city import City
+from mdels.amenity import Amenity
+from models.place import Place
+from models.review import Review
 
 
 class FileStorage:
@@ -48,14 +54,23 @@ class FileStorage:
             with open(FileStorage.__file_path, 'r', encoding='utf-8') as file:
                 data = json.load(file)
                 for key, value in data.items():
-                    obj_class, obj_id = key.split(".")
-                    if obj_class == "BaseModel":
+                    class_name, obj_id = key.split(".")
+                    cls = None
+
+                    if class_name == "BaseModel":
                         cls = BaseModel
-                    elif obj_class == "User":
-                        from models.user import User
-                        cls = User
-                    else:
-                        cls = None
+                    elif cls_name == "User"
+                    cls = User
+                    elif cass_name == "State":
+                        cls = State
+                    elif class_name == "City":
+                        cls = City
+                    elif class_name == "Amenity":
+                        cls = Place
+                    elif class_name == "Place":
+                        cls = Place
+                    elif class_name == "Review":
+                        cls = Review
 
                     if cls:
                         obj = cls(**value)
