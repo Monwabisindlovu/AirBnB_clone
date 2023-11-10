@@ -152,6 +152,44 @@ class HBNBCommand(cmd.Cmd):
         setattr(instance, attr, eval(value))
         instance.save()
 
+    def do_all(self, arg):
+        """Print all string repr of all instances or of a specific class"""
+        args = arg.split()
+        all_objects = models.storage.all()
+        objects_list = []
+        if not arg:
+            for object in all_objects.values():
+                objects_list.append(str(object))
+        else:
+            if args[0] not in HBNBCommand.valid_classes:
+                print("** class doesn't exist **")
+                return
+
+        for key, object in all_objects.items():
+            if key.split('.')[0] == args[0]:
+                objects_list.append(str(object))
+        print(objects_list)
+
+    def do_count(self, arg):
+        """Count the number of instance of a class"""
+        args = arg.split()
+
+        if not args:
+            print("** class name missing **")
+            return
+
+        class_name = args[0]
+        if class_name not in HBNBCommand.valid_classes:
+            print("** class doesn't exist **")
+            return
+
+        all_objects = models.storage.all()
+        count = 0
+        for key in all_objects:
+            if key.split('.')[0] == class_name:
+                count += 1
+        print(count)
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
