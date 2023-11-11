@@ -26,10 +26,12 @@ class BaseModel:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             self.updated_at = self.created_at
+            models.storage.new(self)
 
     def __str__(self):
         """ Return a tring representation of the BaseModel instance """
-        return "[BaseModel] ({}) {}".format(self.id, self.__dict__)
+        return "[{}] ({}) {}".format(self.__class__.__name__,
+                                     self.id, self.__dict__)
 
     def save(self):
         """ Update the updated_at attribute with the current datetime """
@@ -42,4 +44,8 @@ class BaseModel:
         model_dict["__class__"] = self.__class__.__name__
         model_dict["created_at"] = self.created_at.isoformat()
         model_dict["updated_at"] = self.updated_at.isoformat()
+<<<<<<< HEAD
+=======
+        model_dict['id'] = self.id
+>>>>>>> cf3daf768f0eb46967eab9baa88f40c44fb6b61b
         return model_dict
