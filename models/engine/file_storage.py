@@ -41,7 +41,6 @@ class FileStorage:
         serialized_objs = {}
         for key, obj in FileStorage.__objects.items():
             serialized_objs[key] = obj.to_dict()
-
         with open(FileStorage.__file_path, 'w', encoding='utf-8') as file:
             json.dump(serialized_objs, file)
 
@@ -59,7 +58,9 @@ class FileStorage:
 
                     if class_name == "BaseModel":
                         cls = BaseModel
-                    elif cass_name == "State":
+                    elif class_name == "User":
+                        cls = User
+                    elif class_name == "State":
                         cls = State
                     elif class_name == "City":
                         cls = City

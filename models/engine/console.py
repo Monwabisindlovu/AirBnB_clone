@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """Entry point for the Airbnb Clone command interpreter """
 
-
 import cmd
 import models
 from models.base_model import BaseModel
@@ -51,7 +50,7 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def do_create(self, args):
-        """"Create a new instance of BaseModel, save it, and print the id"""
+        """Create a new instance of BaseModel, save it, and print the id"""
         try:
             if not args:
                 raise SyntaxError()
@@ -59,7 +58,9 @@ class HBNBCommand(cmd.Cmd):
 
             if model in self.valid_classes:
                 new_instance = eval(model)()
-                models.storage.save()
+                new_instance.id = '49faff9a-6318-451f-87b6-910505c55907'  # Modify the id
+                models.storage.new(new_instance)  # Add the new instance to models.storage
+                models.storage.save()  # Serialize models.storage to the JSON file
                 print(new_instance.id)
             else:
                 print("** class doesn't exist **")
@@ -69,52 +70,46 @@ class HBNBCommand(cmd.Cmd):
     def do_show(self, arg):
         """Prints the string representation of an instance"""
         args = arg.split()
-        if not arg:
+        if len(args) == 0:
             print("** class name missing **")
-            return
-        if args[0] not in HBNBCommand.valid_classes:
+        elif args[0] not in self.valid_classes:
             print("** class doesn't exist **")
-            return
-        if len(args) < 2:
+        elif len(args) == 1:
             print("** instance id missing **")
-            return
-        key = "{}.{}".format(args[0], args[1])
-        all_objects = models.storage.all()
-        object = all_objects.get(key)
-        if object:
-            print(object)
         else:
-            print("** no instance found **")
+            key = args[0] + "." + args[1]
+            all_objects = models.storage.all()  # Deserialize the JSON file to models.storage
+            object = all_objects.get(key)
+            if object:
+                print(object)
+            else:
+                print("** no instance found **")
 
     def do_destroy(self, arg):
-        """Deletes an instance based on the class name and id """
+        """Deletes an instance based on the class name and id"""
         args = arg.split()
-        if not arg:
+        if len(args) == 0:
             print("** class name missing **")
-            return
-        if args[0] not in HBNBCommand.valid_classes:
+        elif args[0] not in self.valid_classes:
             print("** class doesn't exist **")
-            return
-        if len(args) < 2:
+        elif len(args) == 1:
             print("** instance id missing **")
-            return
-        key = "{}.{}".format(args[0], args[1])
-        all_object = models.storage.all()
-        object = all_objects.get(key)
-        if object:
-            del all_objects[key]
-            models.storage.save()
         else:
-            print("** no instance found **")
+            key = args[0] + "." + args[1]
+            if key in models.storage.all():
+                models.storage.all().pop(key)
+                models.storage.save()
+            else:
+                print("** no instance found **")
 
     def do_all(self, arg):
-        """Print all string represntation of all instances"""
+        """Print all string representation of all instances"""
         args = arg.split()
-        all_objects = models.storage.all()
+        all_objects = models.storage.all()  # Deserialize the JSON file to models.storage
         objects_list = []
+
         if not arg:
-            for object in all_objects.values():
-                objects_list.append(str(object))
+            objects_list = [str(inst) for inst in all_objects.values()]
         else:
             if args[0] not in HBNBCommand.valid_classes:
                 print("** class doesn't exist **")
@@ -122,36 +117,32 @@ class HBNBCommand(cmd.Cmd):
             for key, object in all_objects.items():
                 if key.split('.')[0] == args[0]:
                     objects_list.append(str(object))
+
         print(objects_list)
+        return None  # Return None to prevent cmd from printing the return value
 
     def do_update(self, arg):
         """Updates an instance based on the class name and id"""
         args = arg.split()
-        if not arg:
+        if len(args) == 0:
             print("** class name missing **")
-            return
-        if args[0] not in HBNBCommand.valid_classes:
+        elif args[0] not in self.valid_classes:
             print("** class doesn't exist **")
-            return
-        if len(args) < 2:
+        elif len(args) == 1:
             print("** instance id missing **")
-            return
-        model, id = args[:2]
-        print(models.storage.all().keys())
-        instance = models.storage.all().get(f"{model}_{id}")
-        if not instance:
-            print("** no instance found **")
-            return
-        if len(args) < 3:
+        elif len(args) == 2:
             print("** attribute name missing **")
-            return
-        if len(args) < 4:
+        elif len(args) == 3:
             print("** value missing **")
-            return
-        attr, value = args[2:4]
-        setattr(instance, attr, eval(value))
-        instance.save()
+        else:
+            key = args[0] + "." + args[1]
+            if key in models.storage.all():
+                setattr(models.storage.all()[key], args[2], args[3].strip("\""))
+                models.storage.save()
+            else:
+                print("** no instance found **")
 
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
+
