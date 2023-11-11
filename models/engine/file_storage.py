@@ -54,7 +54,7 @@ class FileStorage:
             with open(FileStorage.__file_path, 'r', encoding='utf-8') as file:
                 data = json.load(file)
                 for key, value in data.items():
-                    class_name, object_id = key.split(".")
+                    class_name, obj_id = key.split(".")
                     cls = None
 
                     if class_name == "BaseModel":
@@ -73,7 +73,7 @@ class FileStorage:
                         cls = Review
 
                     if cls:
-                        object = cls(**value)
-                        FileStorage.__objects[key] = object
+                        obj = cls(**value)
+                        FileStorage.__objects[key] = obj
         except FileNotFoundError:
             pass
