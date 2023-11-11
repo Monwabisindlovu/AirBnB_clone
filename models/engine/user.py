@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-
+""" This is user file """
 from models.base_model import BaseModel
+
 
 class User(BaseModel):
     """User class - Represents a user in the Airbnb application"""
