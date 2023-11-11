@@ -33,17 +33,16 @@ class FileStorage:
 
     def new(self, obj):
         """ Add a new instanc to the __objects dictionary. """
-        key = "{}.{}".format(object.__class__.__name__, object.id)
+        key = "{}.{}".format(obj.__class__.__name__, obj.id)
         FileStorage.__objects[key] = object
 
     def save(self):
         """ Serialize __objects to the JSON file. """
-        serialized_objects = {}
-        for key, object in FileStorage.__objects.items():
-            serialized_objects[key] = object.to_dict()
-
+        serialized_objs = {}
+        for key, obj in FileStorage.__objs.items():
+            serialized_objs[key] = obj.to_dict()
         with open(FileStorage.__file_path, 'w', encoding='utf-8') as file:
-            json.dump(serialized_objects, file)
+            json.dump(serialized_objs, file)
 
     def reload(self):
         """

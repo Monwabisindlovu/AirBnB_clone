@@ -43,5 +43,5 @@ class TestBaseModel(unittest.TestCase):
                          my_new_model.__class__.__name__)
 
 
-if __name__ == '__main':
+if __name__ == '__main__':
     unittest.main()
