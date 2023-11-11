@@ -41,6 +41,9 @@ class FileStorage:
             serialized_objs[key] = obj.to_dict()
         with open(FileStorage.__file_path, 'w', encoding='utf-8') as file:
             json.dump(serialized_objs, file)
+<<<<<<< HEAD
+>>>>>>> 37e47d09796754a37998f68cbc3473bcfdc7d617
+=======
 >>>>>>> 37e47d09796754a37998f68cbc3473bcfdc7d617
 
     def reload(self):
@@ -74,6 +77,9 @@ class FileStorage:
                     if cls:
                         obj = cls(**value)
                         FileStorage.__objects[key] = obj
+<<<<<<< HEAD
+>>>>>>> 37e47d09796754a37998f68cbc3473bcfdc7d617
+=======
 >>>>>>> 37e47d09796754a37998f68cbc3473bcfdc7d617
         except FileNotFoundError:
             pass
