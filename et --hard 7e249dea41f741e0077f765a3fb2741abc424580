@@ -1,0 +1,308 @@
+[33mcommit 1aea6ddf522d3ee8e6e6a932c2acdea41ea21f58[m[33m ([m[1;36mHEAD -> [m[1;32mworkspace[m[33m, [m[1;31morigin/workspace[m[33m)[m
+Author: monwabisindlovu <monwabisindlovu78@gmail.com>
+Date:   Sat Nov 11 06:50:57 2023 -0800
+
+    console.py
+
+[33mcommit 838fb5170e591ba81cb62cb45224c57283481098[m
+Author: LusterPearl <Salamioluwatosin90@gmail.com>
+Date:   Sat Nov 11 04:15:58 2023 -0800
+
+    updated
+
+[33mcommit aa0fef9a20c9ada288dc87f2bf9c5bc52912f376[m
+Merge: 107ade1 6d9b5aa
+Author: LusterPearl <Salamioluwatosin90@gmail.com>
+Date:   Sat Nov 11 04:00:10 2023 -0800
+
+    authors
+
+[33mcommit 107ade13e2d57f59cf42d1a34e7e29b682db8ca6[m
+Author: LusterPearl <Salamioluwatosin90@gmail.com>
+Date:   Sat Nov 11 03:57:31 2023 -0800
+
+    updated
+
+[33mcommit 6d9b5aa18b48680a19f68f2789768fe6abc01ae4[m
+Merge: f291d5f 603cbee
+Author: LusterPearl <132352886+LusterPearl@users.noreply.github.com>
+Date:   Sat Nov 11 12:55:40 2023 +0100
+
+    Merge branch 'master' into workspace
+
+[33mcommit f291d5fd91caf3770952a59187df240909158029[m
+Merge: 8689731 1d7d10e
+Author: monwabisindlovu <monwabisindlovu78@gmail.com>
+Date:   Sat Nov 11 03:50:56 2023 -0800
+
+    update my changesMerge branch 'workspace' of https://github.com/LusterPearl/AirBnB_clone into workspace
+
+[33mcommit 8689731902e40548bf933db03ea99e3231991485[m
+Merge: 862cb3f 37e47d0
+Author: monwabisindlovu <monwabisindlovu78@gmail.com>
+Date:   Sat Nov 11 03:50:10 2023 -0800
+
+    Resolve merge conflicts in console.py
+
+[33mcommit 1d7d10e22edf1d657d3ecc540198be43b4575397[m
+Author: LusterPearl <Salamioluwatosin90@gmail.com>
+Date:   Sat Nov 11 03:48:55 2023 -0800
+
+    updated
+
+[33mcommit 862cb3f041f643e7f2227a51f308068e93c17d12[m
+Author: monwabisindlovu <monwabisindlovu78@gmail.com>
+Date:   Sat Nov 11 03:47:01 2023 -0800
+
+    console.py
+
+[33mcommit 2c321876d2769a086f5a4d80090fb9b9b5ce5de8[m
+Merge: 5858145 7e249de
+Author: monwabisindlovu <monwabisindlovu78@gmail.com>
+Date:   Sat Nov 11 03:42:45 2023 -0800
+
+    console.py
+
+[33mcommit 603cbeef2cff93ff6ea263d3d151ac87a40fbcff[m
+Merge: a44b5d7 37e47d0
+Author: LusterPearl <132352886+LusterPearl@users.noreply.github.com>
+Date:   Sat Nov 11 12:12:41 2023 +0100
+
+    Merge pull request #5 from LusterPearl/workspace
+    
+    Workspace
+
+[33mcommit 37e47d09796754a37998f68cbc3473bcfdc7d617[m
+Author: LusterPearl <Salamioluwatosin90@gmail.com>
+Date:   Sat Nov 11 03:11:54 2023 -0800
+
+    updated
+
+[33mcommit d31dc0472b932e1532f66923a9325df2bcabeb11[m
+Merge: 4483256 5858145
+Author: LusterPearl <Salamioluwatosin90@gmail.com>
+Date:   Sat Nov 11 02:37:16 2023 -0800
+
+    conflit
+
+[33mcommit 44832562abd2215062b600471f48042f1decff2e[m
+Author: LusterPearl <Salamioluwatosin90@gmail.com>
+Date:   Sat Nov 11 02:25:37 2023 -0800
+
+    resolving
+
+[33mcommit 58581456f70b714ac674a8973306bda9159e274c[m
+Author: monwabisindlovu <monwabisindlovu78@gmail.com>
+Date:   Fri Nov 10 10:07:14 2023 -0800
+
+    console.py
+
+[33mcommit 7e249dea41f741e0077f765a3fb2741abc424580[m
+Author: LusterPearl <Salamioluwatosin90@gmail.com>
+Date:   Fri Nov 10 07:20:42 2023 -0800
+
+    tough
+
+[33mcommit e5ae4566bdb467268850ee30927b8c5596cf6b1d[m
+Author: LusterPearl <Salamioluwatosin90@gmail.com>
+Date:   Fri Nov 10 06:41:45 2023 -0800
+
+    checking
+
+[33mcommit 5673663c0a014499e0de36a717fe8679daf3bfbe[m
+Author: LusterPearl <Salamioluwatosin90@gmail.com>
+Date:   Fri Nov 10 06:41:12 2023 -0800
+
+    checking
+
+[33mcommit a44b5d7d8a744d7e917383c11d11779404a8711c[m
+Merge: e0f32d6 b2709d6
+Author: LusterPearl <132352886+LusterPearl@users.noreply.github.com>
+Date:   Fri Nov 10 12:51:03 2023 +0100
+
+    Merge pull request #4 from LusterPearl/workspace
+    
+    Workspace
+
+[33mcommit b2709d6822db95cc0eeca1e15ca884fd56b0ab19[m
+Author: LusterPearl <Salamioluwatosin90@gmail.com>
+Date:   Fri Nov 10 03:49:43 2023 -0800
+
+    not yet perfect
+
+[33mcommit 1e25592a7980678f10ad074cafa8b2b3475defdd[m
+Author: LusterPearl <Salamioluwatosin90@gmail.com>
+Date:   Fri Nov 10 03:11:30 2023 -0800
+
+    solved
+
+[33mcommit 80507c4a6f6cb17e94e4b0e53ec30beaa3a3f2cd[m
+Author: LusterPearl <Salamioluwatosin90@gmail.com>
+Date:   Fri Nov 10 02:46:28 2023 -0800
+
+    workingon
+
+[33mcommit 9835f84b0b088d2e9053c74c6dad155d7c7ed5d4[m
+Author: LusterPearl <Salamioluwatosin90@gmail.com>
+Date:   Thu Nov 9 13:24:06 2023 -0800
+
+    solved test
+
+[33mcommit 5c2ae7731ed4431e4e3e421d4dd146e401c5764b[m
+Author: LusterPearl <Salamioluwatosin90@gmail.com>
+Date:   Thu Nov 9 13:16:03 2023 -0800
+
+    updated
+
+[33mcommit 2738fe863b0cadfbda198092f2608b35e47ba4e2[m
+Author: LusterPearl <Salamioluwatosin90@gmail.com>
+Date:   Thu Nov 9 07:44:43 2023 -0800
+
+    updated
+
+[33mcommit 7bbb9dc9696a8994224a4411b0791bba87124496[m
+Author: LusterPearl <Salamioluwatosin90@gmail.com>
+Date:   Thu Nov 9 06:27:26 2023 -0800
+
+    almostthere
+
+[33mcommit cd9ee8163895ebb60b03556d2c15a8fe58a87024[m
+Author: LusterPearl <Salamioluwatosin90@gmail.com>
+Date:   Thu Nov 9 06:11:13 2023 -0800
+
+    updated
+
+[33mcommit 25f3474411e3dd9930985d06865cdd2e995cb702[m
+Author: LusterPearl <Salamioluwatosin90@gmail.com>
+Date:   Thu Nov 9 03:56:21 2023 -0800
+
+    workingon
+
+[33mcommit 12fbd2fa5210b8bcb3317a67e4aed0e171f4ba64[m
+Author: LusterPearl <Salamioluwatosin90@gmail.com>
+Date:   Thu Nov 9 03:39:43 2023 -0800
+
+    updated
+
+[33mcommit e0f32d6e07d9626bda7718e3fc637e65f741670f[m
+Merge: c7374bf e65c0e7
+Author: LusterPearl <132352886+LusterPearl@users.noreply.github.com>
+Date:   Wed Nov 8 17:02:27 2023 +0100
+
+    Merge pull request #3 from LusterPearl/workspace
+    
+    solved console
+
+[33mcommit e65c0e7725c9d4e3fcb650cdef506afdbf7a4a83[m
+Author: LusterPearl <Salamioluwatosin90@gmail.com>
+Date:   Wed Nov 8 08:01:23 2023 -0800
+
+    solved console
+
+[33mcommit c7374bfc57e15449d92f7d1fad840b55c26b1c3e[m
+Merge: 7075651 97faafb
+Author: LusterPearl <132352886+LusterPearl@users.noreply.github.com>
+Date:   Wed Nov 8 14:47:56 2023 +0100
+
+    Merge pull request #2 from LusterPearl/workspace
+    
+    Workspace
+
+[33mcommit 97faafbe71ce9f6bc93cb57c397e26bac7605f2c[m
+Author: LusterPearl <Salamioluwatosin90@gmail.com>
+Date:   Wed Nov 8 05:45:46 2023 -0800
+
+    resolved
+
+[33mcommit 62c27cc704f35b44975171b0affc9f2dee4211d9[m
+Author: LusterPearl <Salamioluwatosin90@gmail.com>
+Date:   Wed Nov 8 04:28:55 2023 -0800
+
+    filestorage
+
+[33mcommit 70756518c0fea0cae56c11e0f366b971c4721f79[m
+Merge: 0216293 9b2f3fd
+Author: LusterPearl <132352886+LusterPearl@users.noreply.github.com>
+Date:   Wed Nov 8 11:10:40 2023 +0100
+
+    Merge pull request #1 from LusterPearl/workspace
+    
+    Workspace
+
+[33mcommit 9b2f3fd9a008882dd3f1d1b110232e2ece4dd38f[m
+Author: LusterPearl <Salamioluwatosin90@gmail.com>
+Date:   Wed Nov 8 02:08:29 2023 -0800
+
+    updated
+
+[33mcommit 09c74a03f05f07e65912bf9471227f7ca7300fa0[m
+Author: LusterPearl <Salamioluwatosin90@gmail.com>
+Date:   Wed Nov 8 01:56:53 2023 -0800
+
+    resolved
+
+[33mcommit 93ab2f8c9a8bc4cfa6ab343c26e19da6c5d894cc[m
+Author: LusterPearl <Salamioluwatosin90@gmail.com>
+Date:   Tue Nov 7 22:19:06 2023 -0800
+
+    updated
+
+[33mcommit e9fcaaad58d0f86c0113ca439bf5da6787c1b257[m
+Author: LusterPearl <Salamioluwatosin90@gmail.com>
+Date:   Tue Nov 7 11:44:07 2023 -0800
+
+    updated
+
+[33mcommit ec74eb128bd6c846fe7edf65e27bbbf96ba389d9[m
+Author: LusterPearl <Salamioluwatosin90@gmail.com>
+Date:   Tue Nov 7 11:37:33 2023 -0800
+
+    updated
+
+[33mcommit 885d04f8f8dd6aab38bae3e571cc284ec2eaae36[m
+Author: LusterPearl <Salamioluwatosin90@gmail.com>
+Date:   Tue Nov 7 11:36:09 2023 -0800
+
+    random
+
+[33mcommit 287ca69edb76ff6a4e311a26462c1fe8c935b53d[m
+Author: LusterPearl <Salamioluwatosin90@gmail.com>
+Date:   Tue Nov 7 11:23:21 2023 -0800
+
+    updated
+
+[33mcommit d334ea88cab4275d8e30aafadbb6e25084cf0eac[m
+Author: LusterPearl <Salamioluwatosin90@gmail.com>
+Date:   Tue Nov 7 10:21:45 2023 -0800
+
+    updated
+
+[33mcommit f514ab57186e4e858599a0f6e2235d41c72bfabc[m
+Author: LusterPearl <Salamioluwatosin90@gmail.com>
+Date:   Tue Nov 7 10:10:10 2023 -0800
+
+    added
+
+[33mcommit 58c7a59ea0bb3118c1b86b842da5b1c3898f72f1[m
+Author: LusterPearl <Salamioluwatosin90@gmail.com>
+Date:   Tue Nov 7 08:24:54 2023 -0800
+
+    updated
+
+[33mcommit 52dd1989673c3ad0ed8b3657ca3551cfb89a265c[m
+Author: LusterPearl <Salamioluwatosin90@gmail.com>
+Date:   Tue Nov 7 08:22:21 2023 -0800
+
+    updated
+
+[33mcommit 0216293f7635e772cda53c80e25269160b9dde79[m[33m ([m[1;32mmaster[m[33m)[m
+Author: monwabisindlovu <monwabisindlovu78@gmail.com>
+Date:   Tue Nov 7 01:45:03 2023 -0800
+
+     AUTHORS
+
+[33mcommit a29a9b5ea30edb7441442dafa4ef047f2d0fb874[m
+Author: LusterPearl <Salamioluwatosin90@gmail.com>
+Date:   Mon Nov 6 06:44:23 2023 -0800
+
+    updated
