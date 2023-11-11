@@ -44,8 +44,5 @@ class BaseModel:
         model_dict["__class__"] = self.__class__.__name__
         model_dict["created_at"] = self.created_at.isoformat()
         model_dict["updated_at"] = self.updated_at.isoformat()
-<<<<<<< HEAD
-=======
         model_dict['id'] = self.id
->>>>>>> cf3daf768f0eb46967eab9baa88f40c44fb6b61b
         return model_dict
