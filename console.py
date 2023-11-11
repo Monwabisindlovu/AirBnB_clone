@@ -12,6 +12,7 @@ from models.amenity import Amenity
 from models.place import Place
 from models.review import Review
 
+
 class HBNBCommand(cmd.Cmd):
     """
     HBNBCommand class - Represents the command interpreter for the AirBnB Clone
@@ -49,7 +50,9 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def do_create(self, arg):
-        """Creates a new instance of BaseModel, saves it (to the JSON file) and prints the id"""
+        """Creates a new instance of BaseModel,
+        saves it (to the JSON file) and prints the id
+        """
         if not arg:
             print("** class name missing **")
         elif arg not in self.valid_classes:
@@ -60,7 +63,9 @@ class HBNBCommand(cmd.Cmd):
             print(instance.id)
 
     def do_show(self, arg):
-        """Prints the string representation of an instance based on the class name and id"""
+        """Prints the string representation of an instance
+        based on the class name and id
+        """
         args = arg.split()
         if len(args) == 0:
             print("** class name missing **")
@@ -97,11 +102,18 @@ class HBNBCommand(cmd.Cmd):
     def do_all(self, arg):
         """Prints all instances of a class, or all instances"""
         args = arg.split()
-        if len(args) > 0 and args[0] not in self.valid_classes:
-            print("** class doesn't exist **")
+        all_objects = models.storage.all()
+        objects_list = []
+        if not arg:
+            for object in all_objects.value():
+                objects_list.append(str(object))
         else:
-            all_objects = models.storage.all(args[0] if len(args) > 0 else None)
-            print([str(obj) for obj in all_objects.values()])
+            if args[0] not in HBNBCommand.valid_classes:
+                print("** class doesn't exist **")
+                return
+            for key, obj in all_objects.items():
+                objects_list.append(str(object))
+            print(objects_list)
 
     def do_count(self, arg):
         """Counts the number of instances of a class"""
@@ -109,7 +121,9 @@ class HBNBCommand(cmd.Cmd):
         if len(args) > 0 and args[0] not in self.valid_classes:
             print("** class doesn't exist **")
         else:
-            all_objects = models.storage.all(args[0] if len(args) > 0 else None)
+            all_objects = models.storage.all(
+                args[0] if len(args) > 0 else None
+            )
             print(len(all_objects))
 
     def do_update(self, arg):
@@ -134,6 +148,6 @@ class HBNBCommand(cmd.Cmd):
             else:
                 print("** no instance found **")
 
+
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
-
