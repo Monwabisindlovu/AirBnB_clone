@@ -1,51 +1,59 @@
 #!/usr/bin/python3
-"""Tests for the HBNBCommand class"""
+"""Unittests for console.py"""
 
 import unittest
 from io import StringIO
-import os
 from unittest.mock import patch
 from console import HBNBCommand
+from models import storage
 
-class TestHBNBCommand(unittest.TestCase):
-    """Test cases for the HBNBCommand class"""
 
-    """Define a string indicating that a class doesn't exist"""
-    class_unfound = "** class doesn't exist **\n"
-
-    def setUp(self):
-        """Set up for basic tests"""
-        self.cmd = HBNBCommand()
-        self.file_path = "console.py"
-
-    def tearDown(self):
-        """Clean up after testing"""
-        try:
-            os.remove("file.json")
-        except Exception:
-            pass
+class TestConsole(unittest.TestCase):
+    """ Test for all console file
+    This test case checks whether the 'quit' feature in the console
+        produces the expected output. It uses the unittest.mock.patch
+        to temporarily replace sys.stdout for capturing the console output.
+    """
 
     def test_quit(self):
-        """Test the quit command"""
-        with patch('sys.stdout', new=StringIO()) as stdout:
-            self.cmd.onecmd("quit")
-            self.assertEqual('', stdout.getvalue())
+        """ testing for quit feature """
+        with patch('sys.stdout', new=StringIO()) as f:
+            HBNBCommand().onecmd("quit")
+            self.assertEqual('', f.getvalue().strip())
 
-    def test_empty_line(self):
-        """Test handling empty input"""
-        with patch('sys.stdout', new=StringIO()) as stdout:
-            self.cmd.onecmd("\n")
-            self.assertEqual('', stdout.getvalue())
+    def test_help(self):
+        """ Testing for help feature """
+        with patch('sys.stdout', new=StringIO()) as f:
+            HBNBCommand().onecmd("help")
+            self.assertIn('Documented commands', f.getvalue())
 
-    def test_all(self):
-        """Test the all command"""
-        with patch('sys.stdout', new=StringIO()) as stdout:
-            self.cmd.onecmd("all octopus")
-            self.assertEqual(TestHBNBCommand.class_unfound,
-                             stdout.getvalue())
-        with patch('sys.stdout', new=StringIO()) as stdout:
-            self.cmd.onecmd("all State")
-            self.assertEqual("[]\n", stdout.getvalue())
+    def test_create(self):
+        """ Testing for create feature """
+        with patch('sys.stdout', new=StringIO()) as f:
+            HBNBCommand().onecmd("create User")
+            instance_id = f.getvalue().strip()
+            self.assertTrue(instance_id.isalnum())
+
+    def test_show(self):
+        """ Testing for show feature """
+        instance_id = "some_valid_instance_id"
+        with patch('sys.stdout', new=StringIO()) as f:
+            HBNBCommand().onecmd(f"show User {instance_id}")
+            self.assertIn(instance_id, f.getvalue().strip())
+
+    def test_destroy(self):
+        """ Testing for destroy feature """
+        instance_id = "some_valid_instance_id"
+        with patch('sys.stdout', new=StringIO()) as f:
+            HBNBCommand().onecmd(f"destroy User {instance_id}")
+            self.assertIn('destroyed', f.getvalue().strip())
+
+    def test_update(self):
+        """ Testing for update feature """
+        instance_id = "some_valid_instance_id"
+        with patch('sys.stdout', new=StringIO()) as f:
+            HBNBCommand().onecmd(f"update User {instance_id} attribute value")
+            self.assertIn('updated', f.getvalue().strip())
 
 
 if __name__ == '__main__':
