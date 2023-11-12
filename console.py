@@ -74,7 +74,7 @@ class HBNBCommand(cmd.Cmd):
         elif len(args) == 1:
             print("** instance id missing **")
         else:
-            all_objects = models.storage.all(args[0])
+            all_objects = models.storage.all()  # Call all with no arguments
             key = "{}.{}".format(args[0], args[1])
             if key in all_objects:
                 print(all_objects[key])
@@ -91,7 +91,7 @@ class HBNBCommand(cmd.Cmd):
         elif len(args) == 1:
             print("** instance id missing **")
         else:
-            all_objects = models.storage.all(args[0])
+            all_objects = models.storage.all()  # Call all with no arguments
             key = "{}.{}".format(args[0], args[1])
             if key in all_objects:
                 del all_objects[key]
@@ -105,14 +105,15 @@ class HBNBCommand(cmd.Cmd):
         all_objects = models.storage.all()
         objects_list = []
         if not arg:
-            for object in all_objects.value():
+            for object in all_objects.values():
                 objects_list.append(str(object))
+            print(objects_list)
         else:
             if args[0] not in HBNBCommand.valid_classes:
                 print("** class doesn't exist **")
                 return
             for key, obj in all_objects.items():
-                objects_list.append(str(object))
+                objects_list.append(str(obj))
             print(objects_list)
 
     def do_count(self, arg):
@@ -140,14 +141,30 @@ class HBNBCommand(cmd.Cmd):
         elif len(args) == 3:
             print("** value missing **")
         else:
-            all_objects = models.storage.all(args[0])
+            all_objects = models.storage.all()  # Call all with no arguments
             key = "{}.{}".format(args[0], args[1])
             if key in all_objects:
-                setattr(all_objects[key], args[2], args[3])
-                all_objects[key].save()
+                instance = all_objects[key]
+                setattr(instance, args[2], args[3])
+                instance.save()
             else:
                 print("** no instance found **")
+
+    def do_reset(self, arg):
+        """Deletes all instances based on the class name"""
+        args = arg.split()
+        if len(args) == 0:
+            print("** class name missing **")
+        elif args[0] not in self.valid_classes:
+            print("** class doesn't exist **")
+        else:
+            all_objects = models.storage.all()  # Call all with no arguments
+            for key in list(all_objects.keys()):  # Use list to avoid RuntimeError due to change in dict size during iteration
+                if key.split('.')[0] == args[0]:
+                    del all_objects[key]
+            models.storage.save()
 
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
+
