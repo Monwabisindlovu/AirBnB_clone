@@ -105,15 +105,16 @@ class HBNBCommand(cmd.Cmd):
         all_objects = models.storage.all()
         objects_list = []
         if not arg:
-            for object in all_objects.values():
-                objects_list.append(str(object))
+            for obj in all_objects.values():
+                objects_list.append(str(obj))
             print(objects_list)
         else:
             if args[0] not in HBNBCommand.valid_classes:
                 print("** class doesn't exist **")
                 return
             for key, obj in all_objects.items():
-                objects_list.append(str(obj))
+                if obj.__class__.__name__ == args[0]:
+                    objects_list.append(str(obj))
             print(objects_list)
 
     def do_count(self, arg):
@@ -122,10 +123,10 @@ class HBNBCommand(cmd.Cmd):
         if args and args[0] not in self.valid_classes:
             print("** class doesn't exist **")
         else:
-            all_objects = models.storage.all(
-                args[0] if len(args) > 0 else None
-            )
-            print(len(all_objects))
+            all_objects = models.storage.all()
+            count = sum(1 for obj in all_objects.values()
+                        if isinstance(obj, eval(args[0])))
+            print(count)
 
     def do_update(self, arg):
         """Updates an instance based on the class name and id"""
@@ -171,7 +172,7 @@ class HBNBCommand(cmd.Cmd):
         callback = {
                     "all": self.do_all,
                     "update": self.do_update,
-                    "count": self.count,
+                    "count": self.do_count,
                     "destroy": self.do_destroy,
                     "show": self.do_show
         }
