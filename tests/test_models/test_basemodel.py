@@ -9,6 +9,7 @@ from datetime import datetime
 class TestBaseModel(unittest.TestCase):
     """ Test unittest one """
     def test_str_method(self):
+        """ Test unittest first """
         my_model = BaseModel()
         expected_output = "[BaseModel] ({}) {}".format(my_model.id,
                                                        my_model.__dict__)

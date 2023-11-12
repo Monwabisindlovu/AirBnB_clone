@@ -119,7 +119,7 @@ class HBNBCommand(cmd.Cmd):
     def do_count(self, arg):
         """Counts the number of instances of a class"""
         args = arg.split()
-        if len(args) > 0 and args[0] not in self.valid_classes:
+        if args and args[0] not in self.valid_classes:
             print("** class doesn't exist **")
         else:
             all_objects = models.storage.all(
@@ -145,8 +145,10 @@ class HBNBCommand(cmd.Cmd):
             key = "{}.{}".format(args[0], args[1])
             if key in all_objects:
                 instance = all_objects[key]
-                setattr(instance, args[2], args[3])
-                instance.save()
+                attribute_name = args[2]
+                attribute_value = args[3]
+                setattr(instance, attribute_name, eval(attribute_value))
+                models.storage.save()
             else:
                 print("** no instance found **")
 

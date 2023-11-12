@@ -63,3 +63,7 @@ class FileStorage:
                         FileStorage.__objects[key] = obj
         except FileNotFoundError:
             pass
+
+    def classes(self):
+        """Returns a dictionary of classes from the current storage"""
+        return FileStorage.__objects
