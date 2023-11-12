@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+""" The FileStorage class is responsible for serializing
+and deserializing instances of various model classes into a JSON file. """
 
 import json
 from models.base_model import BaseModel

@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-""" This is the state class """
+""" The State class is a subclass of the BaseModel class
+and represents a state or region. """
 
 from models.base_model import BaseModel
 
 
 class State(BaseModel):
-    """ State class """
+    """ State class of BaseModel """
     name = ""

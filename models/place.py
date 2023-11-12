@@ -1,11 +1,12 @@
 #!/usr/bin/python3
-""" Place class """
+""" The Place class is a subclass of the BaseModel class
+and represents a place or location. """
 
 from models.base_model import BaseModel
 
 
 class Place(BaseModel):
-    """ Place class """
+    """ Place class of a BaseModel """
     city_id = ""
     user_id = ""
     name = ""

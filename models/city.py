@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-""" This is City class """
+""" This is City class.The City class is a subclass of the
+BaseModel class and represents a city """
 
 from models.base_model import BaseModel
 
