@@ -9,7 +9,11 @@ from models import storage
 
 
 class TestConsole(unittest.TestCase):
-    """ Test for all console file """
+    """ Test for all console file
+    This test case checks whether the 'quit' feature in the console
+        produces the expected output. It uses the unittest.mock.patch
+        to temporarily replace sys.stdout for capturing the console output.
+    """
     def test_quit(self):
         """ testing for quit feature """
         with patch('sys.stdout', new=StringIO()) as f:

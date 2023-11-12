@@ -7,9 +7,19 @@ from datetime import datetime
 
 
 class TestBaseModel(unittest.TestCase):
-    """ Test unittest one """
+    """ Unit tests for the BaseModel class
+
+     This test class contains unit tests for the methods and behavior
+    of the BaseModel class (replace with your actual class name).
+
+    Test Cases:
+    1. test_initialization: Test the initialization of a BaseModel instance.
+    2. test_to_dict: Test the to_dict method of the BaseModel class.
+    3. test_from_dict: Test the from_dict method of the BaseModel class.
+    4. test_str_representation: Test the string representation of the Base.
+    """
     def test_str_method(self):
-        """ Test unittest first """
+        """ Test the initialization of a BaseModel instance """
         my_model = BaseModel()
         expected_output = "[BaseModel] ({}) {}".format(my_model.id,
                                                        my_model.__dict__)
