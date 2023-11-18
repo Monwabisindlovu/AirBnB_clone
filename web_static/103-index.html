@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/103-common.css">
+  <link rel="stylesheet" href="styles/103-header.css">
+  <link rel="stylesheet" href="styles/103-footer.css">
+  <link rel="stylesheet" href="styles/103-filters.css">
+  <link rel="stylesheet" href="styles/103-places.css">
+  <title>AIRBNB CLONE12</title>
+</head>
+
+<body>
+  <header role="banner">
+    <img src="images/logo.png" alt="Company Logo">
+  </header>
+
+  <div class="container" role="main">
+    <section class="filters" aria-labelledby="filters-heading">
+      <div class="locations">
+        <h3>States</h3>
+        <h4>Fake State</h4>
+        <ul class="popover">
+          <li>
+            <h2>State Name</h2>
+            <ul>
+              <li>Cities</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="amenities">
+        <h3>Amenities</h3>
+        <h4>Fake Amenity</h4>
+        <ul class="popover">
+          <li>Fake Dropdown Item</li>
+        </ul>
+      </div>
+      <button aria-label="Search">Search</button>
+    </section>
+
+    <section class="places" aria-labelledby="places-heading">
+      <article class="place">
+        <h2>Place Name</h2>
+        <div class="flex-container">
+          <div class="flex-item price_by_night"> $100 </div>
+          <div class="information">
+            <div class="flex-item max_guest">
+              <p>Number of guests: <span>4</span></p>
+            </div>
+            <div class="flex-item number_rooms">
+              <p>Number of bedrooms: <span>2</span></p>
+            </div>
+            <div class="flex-item number_bathrooms">
+              <p>Number of bathrooms: <span>1</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="user">
+          <p><strong>Owner:</strong> Fake Text</p>
+        </div>
+        <div class="description">
+          <p>Description: Fake Description</p>
+        </div>
+        <div class="amenities" aria-labelledby="amenities-heading">
+          <h2 id="amenities-heading">Amenities</h2>
+          <ul>
+            <li>Pet friendly</li>
+            <li>TV</li>
+            <li>Wifi</li>
+            <!-- Add more amenities as needed -->
+          </ul>
+        </div>
+        <div class="reviews" aria-labelledby="reviews-heading">
+          <h2 id="reviews-heading">Reviews</h2>
+          <ul>
+            <li>
+              <h3>From Bob Dylan the 27th January 2017</h3>
+              <p>Fake review text</p>
+            </li>
+            <!-- Add more reviews as needed -->
+          </ul>
+        </div>
+      </article>
+      <!-- Add more articles as needed -->
+    </section>
+  </div>
+
+  <footer role="contentinfo">
+    <p>Best School</p>
+  </footer>
+</body>
+
+</html>
