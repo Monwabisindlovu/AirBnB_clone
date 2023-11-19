@@ -13,7 +13,20 @@ from models.review import Review
 
 
 class FileStorage:
-    """Filestorage class definition"""
+    """Filestorage class definition
+    This class is responsible for managing the storage and objs in a JSON file.
+
+    Attributes:
+        __file_path (str): The file path where the objs will be stored.
+        __objects (dict): A dictionary to store objs, with their ids as keys.
+
+    Methods:
+        all(self): Returns the dictionary of all objects.
+        new(self, obj): Adds a new object to the storage.
+        save(self): Saves the objects to the JSON file.
+        reload(self): Loads objects from the JSON file.
+
+    """
     __file_path = "file.json"
     __objects = {}
 
@@ -63,3 +76,7 @@ class FileStorage:
                         FileStorage.__objects[key] = obj
         except FileNotFoundError:
             pass
+
+    def classes(self):
+        """Returns a dictionary of classes from the current storage"""
+        return FileStorage.__objects

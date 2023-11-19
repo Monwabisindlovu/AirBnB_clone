@@ -2,6 +2,7 @@
 HTML
 CSS
 Front-end
+<<<<<<< HEAD
 AirBnB Clone Project Overview
 Repository Name: AirBnB_clone
 
@@ -78,3 +79,5 @@ Based on task 10 with added responsiveness for various screen sizes.
 Accessibility:
 
 Based on task 11 with enhanced accessibility support, focusing on color contrast and header tags.
+=======
+>>>>>>> 54008a370b1a42c7b43a58d4c56c3f7b9a9423fe
